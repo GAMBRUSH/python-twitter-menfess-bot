@@ -4,9 +4,10 @@ from datetime import datetime
 import pytz
 import sys
 from time import sleep
-import requests
+import cfscrape
 from requests_oauthlib import OAuth1
 
+requests = cfscrape.create_scraper()
 auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret)
 auth.set_access_token(config.access_token, config.access_token_secret)
 api = tweepy.API(auth)
